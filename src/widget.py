@@ -1,8 +1,6 @@
 from datetime import datetime
 
-import src
 from src.masks import get_mask_card_number, get_mask_account
-get_mask_account
 
 def mask_account_card(info_string: src) -> src:
     """Принимает строку с типом и номером карты/счета.
