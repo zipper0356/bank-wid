@@ -2,7 +2,7 @@
 
 ## Установка
 1. Клонируйте репозиторий.
-2. Установите зависимости: 'poetry instaill'.
+2. Установите зависимости: 'poetry instill'.
 
 ## Функционал
 * Маскировка номеров карт и счетов ('src/widget.py').
@@ -13,7 +13,7 @@
 ## Примеры использования
 
 '''python
-from src.processing import filter_by_state, sort_by_date
+from src. Processing import filter_by_state, sort_by_date
 
 operations = [
     {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
