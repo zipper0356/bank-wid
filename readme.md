@@ -30,3 +30,9 @@ print(executed_ops)
 # Сортировка
 sorted_ops = sort_by_date(operations, reverse=False)
 print(sorted_ops)
+
+# Тестирование
+Для запуска тестов и проверки покрытия
+используйте команду:
+'''bash
+pytest --cov=src --cov-report=html

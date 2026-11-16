@@ -27,4 +27,5 @@ def get_date(date_string: str) -> str:
         dt = datetime.fromisoformat(date_string)
         return dt.strftime("%d.%m.%Y")
     except ValueError:
-        return "Ошибка: некорректный формат даты"
+
+        return "Некорректный формат даты"
