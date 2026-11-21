@@ -36,3 +36,18 @@ print(sorted_ops)
 используйте команду:
 '''bash
 pytest --cov=src --cov-report=html
+
+## Генераторы (Модуль `generators.py`)
+
+Модуль содержит функции для эффективной обработки больших объемов данных с использованием генераторов.
+
+* `filter_by_currency(transactions, currency)` — фильтрует транзакции по заданной валюте (возвращает итератор).
+* `transaction_descriptions(transactions)` — возвращает описания транзакций (возвращает генератор).
+* `card_number_generator(start, stop)` — генерирует номера карт в формате `XXXX XXXX XXXX XXXX` в заданном диапазоне.
+
+**Пример использования:**
+```python
+from src.generators import filter_by_currency
+
+usd_transactions = filter_by_currency(transactions, "USD")
+print(next(usd_transactions))
