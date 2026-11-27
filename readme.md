@@ -37,17 +37,31 @@ print(sorted_ops)
 '''bash
 pytest --cov=src --cov-report=html
 
-## Генераторы (Модуль `generators.py`)
+## Модуль `generators` (Генераторы)
 
-Модуль содержит функции для эффективной обработки больших объемов данных с использованием генераторов.
+Модуль предназначен для эффективной обработки больших объемов данных (транзакций) с использованием генераторов Python.
 
-* `filter_by_currency(transactions, currency)` — фильтрует транзакции по заданной валюте (возвращает итератор).
-* `transaction_descriptions(transactions)` — возвращает описания транзакций (возвращает генератор).
-* `card_number_generator(start, stop)` — генерирует номера карт в формате `XXXX XXXX XXXX XXXX` в заданном диапазоне.
+### Функции:
 
-**Пример использования:**
+1. `filter_by_currency(transactions, currency)`:
+   Фильтрует список транзакций по заданной валюте (например, 'USD' или 'RUB'). Возвращает итератор, который поочередно выдает подходящие транзакции.
+
+2. `transaction_descriptions(transactions)`:
+   Принимает список транзакций и возвращает генератор, который поочередно выдает описания (поле `description`) для каждой транзакции.
+
+3. `card_number_generator(start, stop)`:
+   Генератор номеров банковских карт. Принимает начальное и конечное значения диапазона и выдает номера карт в формате `XXXX XXXX XXXX XXXX`.
+
+### Примеры использования:
+
 ```python
-from src.generators import filter_by_currency
+from src.generators import filter_by_currency, transaction_descriptions
 
+# Фильтрация транзакций по валюте
 usd_transactions = filter_by_currency(transactions, "USD")
 print(next(usd_transactions))
+
+# Получение описаний транзакций
+descriptions = transaction_descriptions(transactions)
+print(next(descriptions))
+
